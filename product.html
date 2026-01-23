@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VEER Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">VEER</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- PAGE TITLE -->
+<section class="hero">
+  <h1>VEER Natural Products</h1>
+  <p>Puja Utensils ke liye 100% Natural Safai</p>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section class="products">
+
+  <!-- ASH DISHWASH -->
+  <div class="product-card">
+
+    <img
+      src="images/ash-500g-pouch.png"
+      alt="VEER Natural Ash Dishwash"
+      class="product-image"
+    >
+
+    <h2>VEER Natural Ash-Based Dishwash Powder</h2>
+    <p class="subtext">Puja, Brass & Steel Utensils ke liye</p>
+
+    <label><strong>Select Pack Size</strong></label>
+    <select class="pack-select" onchange="updateAshProduct(this)">
+      <option data-img="images/ash-5g.png" data-price="5">5 g – ₹5</option>
+      <option data-img="images/ash-10g.png" data-price="10">10 g – ₹10</option>
+      <option data-img="images/ash-20g.png" data-price="20">20 g – ₹20</option>
+      <option data-img="images/ash-250g-box.png" data-price="60">250 g – ₹60</option>
+      <option data-img="images/ash-500g-pouch.png" data-price="100" selected>500 g – ₹100</option>
+      <option data-img="images/ash-1kg-bulk.png" data-price="180">1 kg – ₹180</option>
+    </select>
+
+    <div class="price">₹100</div>
+
+    <label><strong>Select Natural Fragrance</strong></label>
+    <select class="fragrance-select">
+      <option>Neem</option>
+      <option>Gulab</option>
+      <option>Lemon</option>
+    </select>
+
+    <button
+      type="button"
+      class="btn"
+      onclick="addAshToCart(this)">
+      Add to Cart
+    </button>
+
+    <p class="note">
+      Safai ash se hoti hai.  
+      Fragrance sirf sugandh ke liye.  
+      100% Natural – Koi chemical detergent nahi.
+    </p>
+
+  </div>
+
+  <!-- COIR JALI -->
+  <div class="product-card">
+
+    <img
+      src="images/coir-10.png"
+      alt="VEER Natural Coir Jali"
+      class="product-image"
+    >
+
+    <h2>VEER Natural Coir Jali</h2>
+    <p class="subtext">Shuddh Desi Dhone Ke Liye</p>
+
+    <label><strong>Select Jali Size</strong></label>
+    <select class="jali-select" onchange="updateJaliProduct(this)">
+      <option data-img="images/coir-5.png" data-price="5">Small – ₹5</option>
+      <option data-img="images/coir-10.png" data-price="10" selected>Medium – ₹10</option>
+      <option data-img="images/coir-20.png" data-price="20">Large – ₹20</option>
+    </select>
+
+    <div class="price">₹10</div>
+
+    <button
+      type="button"
+      class="btn"
+      onclick="addJaliToCart(this)">
+      Add to Cart
+    </button>
+
+    <p class="note">
+      Natural coir • Plastic-free  
+      Jaldi sukhti hai • Bacteria kam panapta hai
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 VEER Natural Dishwash</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
