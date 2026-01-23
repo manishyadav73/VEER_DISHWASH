@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout – VEER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadCheckout()">
+
+<header class="header">
+  <div class="logo">VEER</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Checkout</h1>
+  <p>Apni details bharo aur order confirm karo</p>
+</section>
+
+<section class="products">
+
+  <!-- CUSTOMER DETAILS -->
+  <div class="product-card">
+    <h2>Customer Details</h2>
+
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="tel" id="phone" placeholder="Mobile Number" required>
+    <textarea id="address" placeholder="Full Address" rows="4" required></textarea>
+    <textarea id="note" placeholder="Order Note (optional)" rows="2"></textarea>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="product-card">
+    <h2>Order Summary</h2>
+
+    <div id="checkout-items"></div>
+    <h3 id="checkout-total"></h3>
+
+    <button class="btn" onclick="placeOrder()">Place Order on WhatsApp</button>
+  </div>
+
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
