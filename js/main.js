@@ -136,7 +136,8 @@ function placeOrder() {
   whatsappNumber +
   "?text=" +
   encodeURIComponent(message);
-  window.open(url, "_blank");
+window.location.href = "thankyou.html?msg=" + encodeURIComponent(message);
+
 // ================= CART STORAGE =================
   localStorage.removeItem("cart");
 cart = [];
@@ -179,6 +180,7 @@ function removeFromCart(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart();
 }
+
 
 
 
