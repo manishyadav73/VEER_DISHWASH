@@ -24,3 +24,14 @@
 
 </body>
 </html>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const msg = params.get("msg");
+
+  if (msg) {
+    const whatsappNumber = "917739230783";
+    const url = "https://wa.me/" + whatsappNumber + "?text=" + msg;
+    window.open(url, "_blank");
+  }
+</script>
+
