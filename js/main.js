@@ -137,6 +137,12 @@ function placeOrder() {
   "?text=" +
   encodeURIComponent(message);
   window.open(url, "_blank");
+// ================= CART STORAGE =================
+  localStorage.removeItem("cart");
+cart = [];
+
+// redirect to thank you page (optional but pro)
+window.location.href = "thankyou.html";
 }
 
 function loadCart() {
@@ -173,5 +179,6 @@ function removeFromCart(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart();
 }
+
 
 
