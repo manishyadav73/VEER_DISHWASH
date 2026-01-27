@@ -132,11 +132,10 @@ function placeOrder() {
   const whatsappNumber = "917739230783"; // main WhatsApp number
 
   const url =
-    "https://wa.me/" +
-     +
-    "?text=" +
-    encodeURIComponent(message);
-
+  "https://wa.me/" +
+  whatsappNumber +
+  "?text=" +
+  encodeURIComponent(message);
   window.open(url, "_blank");
 }
 
@@ -174,4 +173,5 @@ function removeFromCart(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart();
 }
+
 
