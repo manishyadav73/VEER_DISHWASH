@@ -104,21 +104,42 @@ function loadCart() {
 
 // ================= CHECKOUT =================
 function placeOrder() {
-  let msg = "New Order – VEER%0A%0A";
-  let total = 0;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const note = document.getElementById("note").value.trim();
 
+  if (!name || !phone || !address) {
+    alert("Please fill Name, Phone and Address");
+    return;
+  }
+
+  let message = `New Order – VEER\n\n`;
+  message += `Name: ${name}\n`;
+  message += `Phone: ${phone}\n`;
+  message += `Address: ${address}\n\n`;
+  message += `Order Details:\n`;
+
+  let total = 0;
   cart.forEach(item => {
-    total += item.price;
-    msg += `- ${item.name} (${item.variant}) – ₹${item.price}%0A`;
+    total += item.price * item.qty;
+    message += `- ${item.name} (${item.variant}) – ₹${item.price}\n`;
   });
 
-  msg += `%0ATotal: ₹${total}`;
+  message += `\nTotal Amount: ₹${total}\n`;
+  if (note) message += `Note: ${note}\n`;
 
-  window.open(
-    "https://wa.me/917739230783?text=" + msg,
-    "_blank"
-  );
+  const whatsappNumber = "917739230783"; // main WhatsApp number
+
+  const url =
+    "https://wa.me/" +
+     +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
 }
+
 function loadCart() {
   const cartContainer = document.getElementById("cart-items");
   const totalContainer = document.getElementById("total");
@@ -153,3 +174,4 @@ function removeFromCart(index) {
   localStorage.setItem("cart", JSON.stringify(cart));
   loadCart();
 }
+
