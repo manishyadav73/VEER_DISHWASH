@@ -126,11 +126,16 @@ function placeOrder() {
   }
 
   const whatsappNumber = "917739230783";
-  const url = "https://wa.me/" + whatsappNumber + "?text=" + message;
+ const url =
+  "https://api.whatsapp.com/send?phone=" +
+  whatsappNumber +
+  "&text=" +
+  encodeURIComponent(message);
 
-  window.open(url, "_blank");
+window.open(url, "_blank");
 
   // clear cart after order
   localStorage.removeItem("cart");
   cart = [];
 }
+
