@@ -107,35 +107,40 @@ function placeOrder() {
   }
 
   let message = "";
-  message += "NEW ORDER - VEER%0A%0A";
-  message += "Name: " + name + "%0A";
-  message += "Phone: " + phone + "%0A";
-  message += "Address: " + address + "%0A%0A";
-  message += "Order Details:%0A";
+  message += "NEW ORDER - VEER\n\n";
+  message += "Name: " + name + "\n";
+  message += "Phone: " + phone + "\n";
+  message += "Address: " + address + "\n\n";
+  message += "Order Details:\n";
 
   let total = 0;
   cart.forEach(item => {
     total += item.price * item.qty;
-    message += "- " + item.name + " (" + item.variant + ") : Rs " + item.price + "%0A";
+    message += "- " + item.name + " (" + item.variant + ") : ₹" + item.price + "\n";
   });
 
-  message += "%0ATotal Amount: Rs " + total;
+  message += "\nTotal Amount: ₹" + total;
 
   if (note) {
-    message += "%0A%0ANote: " + note;
+    message += "\n\nNote: " + note;
   }
 
-  const whatsappNumber = "917739230783";
- const url =
-  "https://api.whatsapp.com/send?phone=" +
-  whatsappNumber +
-  "&text=" +
-  encodeURIComponent(message);
+  const whatsappNumber = "917739230783"; // apna number
 
-window.open(url, "_blank");
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
 
-  // clear cart after order
+  window.open(url, "_blank");
+
+  // Clear cart
   localStorage.removeItem("cart");
   cart = [];
+
+  // Thank you page
+  window.location.href = "thankyou.html";
 }
+
 
